@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSV Transaction Lookup</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">CSV Transaction Demo</p>
+        <h1>Search or add a transaction</h1>
+        <p class="lede">Lookup any transaction by ID or add a new record using the same simple UI.</p>
+      </div>
+    </header>
+
+    <main class="layout-grid">
+      <section class="card">
+        <h2>Search transaction</h2>
+        <form id="search-form" class="form-grid">
+          <label>
+            Transaction ID
+            <input id="search-txn" type="text" placeholder="TXN100005" required />
+          </label>
+          <button type="submit">Search</button>
+        </form>
+        <div id="search-result" class="result-box"></div>
+      </section>
+
+      <section class="card">
+        <h2>Add transaction</h2>
+        <form id="add-form" class="form-grid">
+          <label>
+            Transaction ID
+            <input id="add-txn" type="text" placeholder="TXN100100" required />
+          </label>
+          <label>
+            Reference code
+            <input id="add-ref" type="text" placeholder="REFABC12345" required />
+          </label>
+          <label>
+            Payment mode
+            <select id="add-mode" required>
+              <option value="">Choose mode</option>
+              <option value="UPI">UPI</option>
+              <option value="Credit Card">Credit Card</option>
+              <option value="Debit Card">Debit Card</option>
+              <option value="Wallet">Wallet</option>
+              <option value="Net Banking">Net Banking</option>
+            </select>
+          </label>
+          <button type="submit">Add transaction</button>
+        </form>
+        <div id="add-result" class="result-box"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
