@@ -98,6 +98,34 @@ Response:
 - `400 Bad Request` when required fields are missing
 - `409 Conflict` when the transaction already exists
 
+## Docker
+
+### Build the image
+
+```bash
+docker build -t csv-txn-lookup .
+```
+
+### Run the container
+
+```bash
+docker run -p 8080:8080 csv-txn-lookup
+```
+
+### Run in the background
+
+```bash
+docker run -d -p 8080:8080 csv-txn-lookup
+```
+
+Then open [http://localhost:8080](http://localhost:8080).
+
+### Stop the container
+
+```bash
+docker stop <container-id>
+```
+
 ## Data Storage
 
 - Input CSV files are loaded from `src/data`
