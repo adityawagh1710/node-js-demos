@@ -7,16 +7,13 @@ on:
   pull_request:
     branches: [main]
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up QEMU (multi-platform support)
         uses: docker/setup-qemu-action@v3.6.0
@@ -59,12 +56,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.3.0
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
           cache-dependency-path: csv_txn_lookup_express/package-lock.json
 
@@ -82,12 +79,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.3.0
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
           cache-dependency-path: csv_txn_lookup_express/package-lock.json
 
